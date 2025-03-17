@@ -6,8 +6,6 @@ Ovaj projekt dohvaća raspored događaja za korisnike pomoću HTTP klijenta OkHt
 
 Prije pokretanja projekta, osiguraj da imaš instalirane sljedeće alate:
 - [JDK 11+](https://adoptopenjdk.net/)
-- [Gradle](https://gradle.org/install/)
-- [Kotlin](https://kotlinlang.org/) CLI ili IDE poput Intellij IDEA
 
 ## Instalacija i pokretanje
 
