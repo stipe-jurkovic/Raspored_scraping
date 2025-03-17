@@ -2,7 +2,7 @@
 
 Ovaj projekt dohvaća raspored događaja za korisnike pomoću HTTP klijenta OkHttp.
 
-### Najbolje je pokrenuti koristeci IDE poput Intellij IDEA
+### Najbolje je pokrenuti koristeci IDE poput Android studio ili Intellij IDEA
 
 ## Zahtjevi
 
