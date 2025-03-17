@@ -1,7 +1,5 @@
 import okhttp3.OkHttpClient
 import java.io.File
-import java.time.LocalDate
-
 
 suspend fun main() {
     val userNames = readUsernamesFromFile("data/usernames.txt")
