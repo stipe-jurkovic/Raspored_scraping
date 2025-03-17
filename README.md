@@ -55,9 +55,11 @@ Prije pokretanja projekta, osiguraj da imaš instalirane sljedeće alate:
 
 Svaka generirana CSV datoteka sadrži sljedeće stupce:
 ```
-Date,Event Name,Location
-03-01-2024,Predavanje Matematika,Dvorana A
-03-03-2024,Lab Vježbe Programiranje,Lab 3
+id, name, shortName, colorId, professor, eventType, groups, classroom, start, end, description, recurring, recurringType, recurringUntil, studyCode
+532053,Kriptografija i mrežna sigurnost,KIMS,0,Čagalj Mario,PREDAVANJE,,C501,2024-02-26T10:15,2024-02-26T12:00,ponedjeljak 26.2.2024. 10:15 - 12:00 (2 sata),true,WEEKLY,do 9.6.2024.,250
+532137,Podržano strojno učenje,PSU,0,Vasilj Josip,PREDAVANJE,,A243,2024-02-27T08:15,2024-02-27T10:00,utorak 27.2.2024. 8:15 - 10:00 (2 sata),true,WEEKLY,do 9.6.2024.,250
+532077,Metode optimizacije,MO,0,Marasović Jadranka,PREDAVANJE,,C502,2024-02-27T10:15,2024-02-27T12:00,utorak 27.2.2024. 10:15 - 12:00 (2 sata),true,WEEKLY,do 9.6.2024.,250
+
 ```
 
 ## Dodatne informacije
