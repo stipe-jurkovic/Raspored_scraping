@@ -2,12 +2,15 @@
 
 Ovaj projekt dohvaća raspored događaja za korisnike pomoću HTTP klijenta OkHttp.
 
+### Najbolje je pokrenuti koristeci IDE poput Intellij IDEA
+
 ## Zahtjevi
 
 Prije pokretanja projekta, osiguraj da imaš instalirane sljedeće alate:
 - [JDK 11+](https://adoptopenjdk.net/)
 
-## Instalacija i pokretanje
+
+## Instalacija i pokretanje bez IDE-a
 
 1. Kloniraj repozitorij:
    ```sh
