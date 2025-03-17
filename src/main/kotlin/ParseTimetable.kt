@@ -26,7 +26,7 @@ fun parseTimetable(body: String): List<Event> {
                 ?: e.selectFirst("div.popup > div.eventContent > div.header > div > span.title")?.text()
                 ?: ""
             val group = e.select("span.group.normal").first()?.text() ?: ""
-            val studycode = e.selectFirst("span.studyCode")?.text() ?: ""
+            val studycode = (e.selectFirst("span.studyCode")?.text()?: "").replace("(","" ).replace(")","")
             val room = e.selectFirst("div.eventContent > div.eventInfo > span.resource")?.text() ?: ""
             val detailTime = e.selectFirst("div.detailItem.datetime")?.text() ?: ""
             val professor = e.selectFirst("div.detailItem.user")?.text() ?: ""

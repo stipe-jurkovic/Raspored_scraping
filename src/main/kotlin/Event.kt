@@ -16,7 +16,31 @@ data class Event(
     val recurringType: Recurring = Recurring.UNDEFINED,
     val recurringUntil: String = "",
     val studyCode: String = "",
-)
+) {
+    fun toCSV(): String {
+        return listOf(
+            id,
+            name,
+            shortName,
+            colorId,
+            professor,
+            eventType,
+            groups,
+            classroom,
+            start,
+            end,
+            description,
+            recurring,
+            recurringType,
+            recurringUntil,
+            studyCode
+        ).joinToString(",") { it.toString().replace(",", "") }
+    }
+
+    fun toCSVHeader(): String {
+        return "id, name, shortName, colorId, professor, eventType, groups, classroom, start, end, description, recurring, recurringType, recurringUntil, studyCode"
+    }
+}
 
 enum class Recurring {
     ONCE, WEEKLY, EVERY_TWO_WEEKS, MONTHLY, UNDEFINED
