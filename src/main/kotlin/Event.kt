@@ -40,6 +40,10 @@ data class Event(
     fun toCSVHeader(): String {
         return "id, name, shortName, colorId, professor, eventType, groups, classroom, start, end, description, recurring, recurringType, recurringUntil, studyCode"
     }
+
+    override fun toString(): String {
+        return "Event(start=${start.toLocalTime()}, end=${end.toLocalTime()})"
+    }
 }
 
 enum class Recurring {

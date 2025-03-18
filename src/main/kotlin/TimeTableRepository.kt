@@ -1,3 +1,5 @@
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 
 class TimeTableRepository(
@@ -7,14 +9,14 @@ class TimeTableRepository(
 
     override suspend fun fetchTimetable(
         user: String,
-        startDate: String,
-        endDate: String
+        startDate: LocalDate,
+        endDate: LocalDate
     ): List<Event> {
         val params: HashMap<String, String> = hashMapOf(
             "DataType" to "User",
             "DataId" to user,
-            "MinDate" to startDate,
-            "MaxDate" to endDate
+            "MinDate" to startDate.format(DateTimeFormatter.ofPattern("MM-dd-yyyy")),
+            "MaxDate" to endDate.format(DateTimeFormatter.ofPattern("MM-dd-yyyy"))
         )
 
         when (val result = timetableService.fetchTimeTable(params = params)) {

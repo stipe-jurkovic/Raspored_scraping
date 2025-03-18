@@ -1,3 +1,6 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
+
 plugins {
     kotlin("jvm") version "1.9.22"
     id ("application")
@@ -12,6 +15,9 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+}
+tasks.withType<KotlinCompile> {
+    kotlinOptions.freeCompilerArgs += "-Xdebug"
 }
 
 dependencies {

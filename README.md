@@ -1,8 +1,8 @@
 # Kotlin Timetable Fetcher
 
-Ovaj projekt dohvaća raspored događaja za korisnike pomoću HTTP klijenta OkHttp.
+Ovaj projekt dohvaća rasporede studenata i računa periode kada su svi slobodni.
 
-### Najbolje je pokrenuti koristeci IDE poput Android studio ili Intellij IDEA
+## Najlakše je pokrenuti koristeći IDE poput Android studio ili Intellij IDEA
 
 ## Zahtjevi
 
@@ -25,10 +25,15 @@ Prije pokretanja projekta, osiguraj da imaš instalirane sljedeće alate:
    testuser
    ```
 
-3. Dodaj početni i krajnji datum u `data/dates.txt` (jedan datum po liniji, u formatu `MM-DD-YYYY`):
+3. Dodaj početni i krajnji datum u `data/dates.txt` (jedan datum po liniji, u formatu `DD-MM-YYYY`):
    ```
    02-24-2024
    06-06-2024
+   ```
+4. Dodaj početno i krajnje vrijeme u `data/times.txt` (jedno vrijeme po liniji, u formatu `HH:MM`):
+   ```
+   08:00
+   20:00
    ```
 
 4. Pokreni aplikaciju:
@@ -63,12 +68,39 @@ id, name, shortName, colorId, professor, eventType, groups, classroom, start, en
 
 ```
 
+Primjer occupiedTimes.csv i freeTimes.csv datoteka:
+```
+DayOfWeek,StartTime,EndTime
+MONDAY,08:00,09:15
+MONDAY,12:00,12:15
+MONDAY,14:00,14:15
+MONDAY,16:00,18:15
+TUESDAY,08:00,08:15
+TUESDAY,14:00,14:15
+TUESDAY,16:00,18:30
+WEDNESDAY,08:00,08:15
+WEDNESDAY,14:45,15:15
+WEDNESDAY,17:00,18:00
+WEDNESDAY,19:30,20:00
+THURSDAY,08:00,08:15
+THURSDAY,13:00,13:30
+THURSDAY,15:00,19:30
+FRIDAY,09:30,10:15
+FRIDAY,17:00,20:00
+SATURDAY,09:30,20:00
+
+```
+
 ## Dodatne informacije
 
 - OkHttp se koristi za slanje HTTP zahtjeva.
-- `suspend` funkcija se koristi zbog korištenja Kotlin Coroutines.
 - Ako `data/timetables/` ne postoji, aplikacija će ga automatski kreirati.
 - Ako `data/usernames.txt` ili `data/dates.txt` nisu pravilno konfigurirani, aplikacija će baciti grešku.
 
 Ako imaš bilo kakvih problema, provjeri ovisnosti i verzije alata koje koristiš.
+
+## Napomene
+
+- Što je veći vremenski raspon, dulje traje dohvaćanje podataka.
+- Ako program naiđe na grešku pri dohvaćanju rasporeda za nekog korisnika, taj korisnik će biti preskočen.
 
